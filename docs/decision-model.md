@@ -1,74 +1,143 @@
 # Decision Model
 
-## Overview
+## Objective
 
-The decision model of Quantum Observer AI explains how multiple possible futures are evaluated, weighted, and collapsed into a single outcome through probabilistic reasoning and observer interaction.
+The Decision Model defines how Quantum Observer AI transforms
+a quantum-inspired superposition of states into a concrete, explainable decision.
+
+This model focuses on:
+- Practical execution
+- Predictable behavior
+- Auditability
+- Adaptability to real-world constraints
 
 ---
 
-## Decision State
+## Decision Lifecycle
 
-Each possible future is represented as a structured decision state.
+Every decision follows the same lifecycle:
 
-```python
-DecisionState:
-  id: string
-  description: string
-  probability: float
-  risk_level: Low | Medium | High
-  emotional_impact: Low | Medium | High
-  entropy: float
-  score: float
-Superposition Generation
-The decision prompt is analyzed semantically
+1. Problem ingestion
+2. State generation
+3. State evaluation
+4. Probability adjustment
+5. Collapse execution
+6. Explanation emission
+7. Observer feedback incorporation
 
-Multiple coherent future scenarios are generated
+---
 
-Each scenario becomes a DecisionState
+## 1. Problem Ingestion
 
-No option is prioritized initially
+The system receives a decision problem in one or more forms:
+- Natural language query
+- Structured parameters
+- Constraints and objectives
+- Risk tolerance indicators
 
-Entropy
-Entropy measures uncertainty across all decision states.
+All inputs are normalized into a unified context representation.
 
-High entropy means:
+---
 
-Outcomes are very different
+## 2. State Generation
 
-There is no clear dominant option
+Multiple candidate decision states are generated in parallel.
 
-The decision carries high uncertainty
+Each state must:
+- Be logically valid
+- Respect hard constraints
+- Represent a distinct decision path
 
-Entropy is applied as a penalty during collapse.
+States are tagged with:
+- Source rationale
+- Generation timestamp
+- Context alignment score
 
-Observer Influence
-The observer influences the system by specifying:
+---
 
-Risk tolerance
+## 3. State Evaluation
 
-Time horizon
+Each state is evaluated across multiple dimensions:
 
-Emotional priority
+- Feasibility
+- Risk exposure
+- Expected value
+- Ethical alignment
+- Context consistency
 
-Constraints
+Evaluation produces a preliminary weight for each state.
 
-These inputs dynamically adjust probabilities.
+---
 
-Collapse Logic (Conceptual)
-Final Score =
-  (Base Probability × Context Weight)
-+ Observer Bias
-- Entropy Penalty
-The state with the strongest adjusted score survives the collapse.
+## 4. Probability Adjustment
 
-Explainability
-After collapse, the system explains:
+Preliminary weights are normalized into probabilities.
 
-Why this option survived
+Adjustments may occur due to:
+- Strong constraints
+- Conflicting objectives
+- Observer historical preferences
+- Domain-specific heuristics
 
-What factors mattered most
+At this stage, uncertainty is explicitly preserved.
 
-How observer input changed the outcome
+---
 
-Summary
-This decision model ensures that uncertainty is respected until commitment occurs.
+## 5. Collapse Execution
+
+The collapse function selects the final decision state.
+
+Supported collapse strategies:
+- Maximum probability
+- Weighted stochastic sampling
+- Risk-averse filtering
+- Exploration-driven entropy maximization
+
+The chosen strategy is always recorded.
+
+---
+
+## 6. Explanation Emission
+
+After collapse, the system generates an explanation artifact containing:
+- All candidate states
+- Final probability distribution
+- Collapse strategy used
+- Justification for selection
+- Rejection reasons for other states
+
+This artifact is mandatory and immutable.
+
+---
+
+## 7. Observer Feedback Incorporation
+
+User feedback is processed as signal, not override.
+
+Feedback influences:
+- Future probability shaping
+- State generation bias
+- Strategy preference weighting
+
+No historical decision is silently altered.
+
+---
+
+## Failure Modes and Safeguards
+
+- If no valid state exists → return uncertainty
+- If probabilities converge excessively → trigger exploration
+- If explanation cannot be generated → decision is rejected
+
+---
+
+## Why This Model Is Different
+
+Most AI systems optimize for speed or confidence.
+
+Quantum Observer AI optimizes for:
+- Decision integrity
+- Transparency
+- Human-aligned adaptability
+
+This model ensures decisions can be trusted — even when they are questioned.
