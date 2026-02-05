@@ -1,96 +1,111 @@
 # System Architecture
 
-## Overview
+## 1. Overview
 
-Quantum Observer AI is designed as a modular and extensible decision-support system. Its architecture separates interaction, orchestration, reasoning, and memory to ensure scalability, clarity, and explainability.
+Quantum Observer AI is designed as a modular, extensible, and production-oriented decision-support system.  
+Its architecture deliberately separates interaction, orchestration, reasoning, and memory to ensure:
 
-The system preserves uncertainty throughout the decision lifecycle instead of collapsing prematurely into a single deterministic answer.
+- Scalability
+- Explainability
+- Ethical control
+- Human-in-the-loop decision making
 
----
-
-## High-Level Architecture
-
-[ Observer Interface ]
-↓
-[ API Orchestrator (FastAPI) ]
-↓
-[ Quantum Core Engine ]
-↓
-[ LLM & Embeddings Layer ]
-↓
-[ Observer Memory & State Tracking ]
-
+Unlike traditional AI systems, uncertainty is preserved throughout the decision lifecycle and is only resolved through explicit observation.
 
 ---
 
-## Observer Interface (Frontend)
+## 2. High-Level Architecture
 
-**Responsibilities**
-- Collect the user's decision prompt
+Observer Interface
+↓
+API Orchestrator (FastAPI)
+↓
+Quantum Decision Core
+↓
+LLM & Embeddings Layer
+↓
+Observer Memory & State Tracking
+
+
+Each layer has a single responsibility and clear boundaries.
+
+---
+
+## 3. Observer Interface (Frontend)
+
+### Responsibilities
+- Collect the observer’s decision prompt
 - Display multiple decision states in parallel
-- Expose probabilities and uncertainty
-- Allow observer interaction before collapse
+- Expose probabilities, risk, and entropy
+- Enable observer interaction before collapse
 
 The interface intentionally avoids presenting a final answer until observation occurs.
 
 ---
 
-## API Orchestrator (FastAPI)
+## 4. API Orchestrator (FastAPI)
 
-**Responsibilities**
+### Responsibilities
 - Route requests between frontend and core engine
 - Validate inputs and outputs
-- Maintain clear data contracts
+- Enforce data contracts and schemas
+- Coordinate the decision flow
 
-FastAPI is used for its strong typing, performance, and production readiness.
+FastAPI is chosen for strong typing, performance, and production readiness.
 
 ---
 
-## Quantum Core Engine
+## 5. Quantum Decision Core
 
-**Responsibilities**
-- Generate decision superposition
+### Responsibilities
+- Maintain decision states in superposition
 - Calculate entropy and uncertainty
-- Apply observer bias
+- Reweight probabilities based on observer input
 - Execute probabilistic collapse
+- Generate explainable outcomes
 
 This layer contains the core reasoning logic and remains independent of UI and LLM providers.
 
 ---
 
-## LLM & Embeddings Layer
+## 6. LLM & Embeddings Layer
 
-**Responsibilities**
-- Decompose the decision prompt semantically
+### Responsibilities
+- Semantically decompose decision prompts
 - Generate coherent alternative futures
 - Enrich decision states with contextual meaning
 
-The LLM assists reasoning but never dictates the final outcome.
+The LLM assists reasoning but never collapses decisions or overrides the core engine.
 
 ---
 
-## Observer Memory & State Tracking
+## 7. Observer Memory & State Tracking
 
-**Responsibilities**
-- Persist observer preferences
-- Track historical decisions
-- Influence future probability weighting
+### Responsibilities
+- Persist observer preferences and constraints
+- Track historical decisions and outcomes
+- Influence future probability weighting over time
 
-This enables adaptive behavior over time.
+This enables adaptive, observer-aware behavior.
 
 ---
 
-## Architectural Principles
+## 8. Architectural Principles
 
 - Separation of concerns
 - Explicit uncertainty representation
+- Human-in-the-loop by design
 - Explainability over opacity
-- Observer-aware computation
 - Probabilistic outcomes over deterministic answers
+
+These principles are enforced structurally, not by convention.
 
 ---
 
-## Summary
+## 9. Architectural Intent
 
-Quantum Observer AI is architected to reflect the reality of decision-making:  
-**multiple futures, uncertainty, and human influence.**
+Quantum Observer AI is architected to reflect the reality of decision-making:
+
+> Multiple futures coexist.  
+> Uncertainty is not a flaw.  
+> The observer is part of the system.
