@@ -296,3 +296,64 @@ This project is intentionally designed to:
 
 > The observer is not external to the system.
 > The observer is part of it.
+
+---
+
+## Project Structure (Code Skeleton)
+
+Below is the initial, production-oriented project structure for **Quantum Observer AI**. This skeleton is designed to be clear, modular, and immediately extensible, even before full implementation.
+
+```
+quantum-observer-ai/
+├── README.md
+├── pyproject.toml
+├── requirements.txt
+├── src/
+│   └── quantum_observer/
+│       ├── __init__.py
+│       ├── core/
+│       │   ├── __init__.py
+│       │   ├── state.py
+│       │   ├── superposition.py
+│       │   ├── collapse.py
+│       │   └── decision_engine.py
+│       ├── explainability/
+│       │   ├── __init__.py
+│       │   └── explanation.py
+│       ├── observer/
+│       │   ├── __init__.py
+│       │   └── feedback.py
+│       ├── ethics/
+│       │   ├── __init__.py
+│       │   └── constraints.py
+│       └── interfaces/
+│           ├── __init__.py
+│           └── api.py
+├── tests/
+│   ├── __init__.py
+│   └── test_decision_flow.py
+└── docs/
+    └── (documentation files)
+```
+
+### Design Rationale
+
+* **core/** — Implements the quantum-inspired decision logic
+* **explainability/** — Guarantees transparency as a first-class concern
+* **observer/** — Manages human-in-the-loop feedback
+* **ethics/** — Enforces ethical and operational constraints
+* **interfaces/** — Prepares for APIs, CLIs, or service integrations
+
+This structure ensures that no decision logic exists without ethical checks or explanation paths.
+
+### Initial Scope
+
+At this stage, modules contain interfaces and placeholders only. No premature optimization or hidden logic is introduced.
+
+The objective is to:
+
+* Enable incremental development
+* Preserve architectural intent
+* Allow contributors and reviewers to understand the system immediately
+
+---
